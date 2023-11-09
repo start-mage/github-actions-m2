@@ -68,7 +68,8 @@ echo "Configure extension source in composer"
 composer config --unset repo.0
 composer config repositories.local-source path local-source/\*
 composer config repositories.magento composer $REPOSITORY_URL
-composer require $COMPOSER_NAME:@dev --no-update --no-interaction
+echo "Use repo module here.."
+#composer require $COMPOSER_NAME:@dev --no-update --no-interaction
 
 echo "Pre Install Script [magento_pre_install_script]: $INPUT_MAGENTO_PRE_INSTALL_SCRIPT"
 if [[ ! -z "$INPUT_MAGENTO_PRE_INSTALL_SCRIPT" && -f "${GITHUB_WORKSPACE}/$INPUT_MAGENTO_PRE_INSTALL_SCRIPT" ]] ; then
